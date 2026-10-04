@@ -24,7 +24,7 @@ public with sharing class DuffelOrderService {
         
         req.setHeader(
             'Authorization',
-            'Bearer duffel_test_H6etSEcpnuGYo3qs0mDuX4-1F5_48Aa8M4WslVHN8zs'
+            'Access Tocken'
         );
         
         
