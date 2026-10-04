@@ -1,0 +1,225 @@
+:host{
+
+    display:block;
+
+}
+
+/* ===========================
+   Footer
+=========================== */
+
+.footer{
+
+    background:linear-gradient(135deg,#16325c,#0b5cab);
+
+    color:white;
+
+    margin-top:4rem;
+
+    padding-top:3rem;
+
+}
+
+/* ===========================
+   Content
+=========================== */
+
+.footer-content{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr;
+
+    gap:3rem;
+
+    padding:0 2rem 3rem;
+
+}
+
+/* ===========================
+   Brand
+=========================== */
+
+.logo{
+
+    font-size:2rem;
+
+    font-weight:700;
+
+    color:#ffd24d;
+
+    margin-bottom:1rem;
+
+}
+
+.brand p{
+
+    line-height:1.8;
+
+    color:#d9e6f2;
+
+    font-size:1rem;
+
+}
+
+/* ===========================
+   Headings
+=========================== */
+
+.links h3,
+.features h3{
+
+    font-size:1.2rem;
+
+    margin-bottom:1rem;
+
+    color:white;
+
+}
+
+/* ===========================
+   Lists
+=========================== */
+
+.links ul,
+.features ul{
+
+    list-style:none;
+
+    padding:0;
+
+    margin:0;
+
+}
+
+.links li,
+.features li{
+
+    margin-bottom:.9rem;
+
+    color:#d9e6f2;
+
+    transition:.3s;
+
+    cursor:pointer;
+
+}
+
+.links li:hover,
+.features li:hover{
+
+    color:#ffd24d;
+
+    transform:translateX(5px);
+
+}
+
+/* ===========================
+   Bottom
+=========================== */
+
+.footer-bottom{
+
+    border-top:1px solid rgba(255,255,255,.2);
+
+    padding:1.5rem 2rem;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    max-width:1200px;
+
+    margin:auto;
+
+    color:#d9e6f2;
+
+    font-size:.95rem;
+
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media(max-width:992px){
+
+    .footer-content{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+    }
+
+    .footer-bottom{
+
+        flex-direction:column;
+
+        gap:.75rem;
+
+        text-align:center;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .footer{
+
+        padding-top:2rem;
+
+    }
+
+    .footer-content{
+
+        padding:0 1.5rem 2rem;
+
+        gap:2rem;
+
+    }
+
+    .logo{
+
+        font-size:1.7rem;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .footer{
+
+        margin-top:2rem;
+
+    }
+
+    .logo{
+
+        font-size:1.5rem;
+
+    }
+
+    .brand p{
+
+        font-size:.95rem;
+
+    }
+
+    .footer-bottom{
+
+        font-size:.85rem;
+
+    }
+
+}

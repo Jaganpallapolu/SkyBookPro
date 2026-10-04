@@ -1,0 +1,183 @@
+<template>
+
+    <div class="dashboard-wrapper">
+
+        <lightning-card title="Agent Dashboard" icon-name="standard:dashboard">
+
+            <!-- ========================= -->
+            <!-- KPI DASHBOARD -->
+            <!-- ========================= -->
+
+            <div class="dashboard-container">
+
+                <lightning-layout multiple-rows>
+
+                    <!-- Today's Bookings -->
+
+                    <lightning-layout-item size="12" medium-device-size="6" large-device-size="3"
+                        padding="around-small">
+
+                        <div class="metric-card bookings">
+
+                            <div class="metric-icon">
+                                📅
+                            </div>
+
+                            <div class="metric-title">
+                                Today's Bookings
+                            </div>
+
+                            <div class="metric-value">
+                                {dashboard.todaysBookings}
+                            </div>
+
+                        </div>
+
+                    </lightning-layout-item>
+
+                    <!-- Revenue -->
+
+                    <lightning-layout-item size="12" medium-device-size="6" large-device-size="3"
+                        padding="around-small">
+
+                        <div class="metric-card revenue">
+
+                            <div class="metric-icon">
+                                💰
+                            </div>
+
+                            <div class="metric-title">
+                                Today's Revenue
+                            </div>
+
+                            <div class="metric-value">
+                                {formattedTodaysRevenue}
+                            </div>
+
+                        </div>
+
+                    </lightning-layout-item>
+
+                    <!-- Pending -->
+
+                    <lightning-layout-item size="12" medium-device-size="6" large-device-size="3"
+                        padding="around-small">
+
+                        <div class="metric-card pending">
+
+                            <div class="metric-icon">
+                                👥
+                            </div>
+
+                            <div class="metric-title">
+                                Pending Group Approvals
+                            </div>
+
+                            <div class="metric-value">
+                                {dashboard.pendingGroupApprovals}
+                            </div>
+
+                        </div>
+
+                    </lightning-layout-item>
+
+                    <!-- Cancellation -->
+
+                    <lightning-layout-item size="12" medium-device-size="6" large-device-size="3"
+                        padding="around-small">
+
+                        <div class="metric-card cancellation">
+
+                            <div class="metric-icon">
+                                ❌
+                            </div>
+
+                            <div class="metric-title">
+                                Active Cancellation Cases
+                            </div>
+
+                            <div class="metric-value">
+                                {dashboard.activeCancellationCases}
+                            </div>
+
+                        </div>
+
+                    </lightning-layout-item>
+
+                </lightning-layout>
+
+            </div>
+
+            <!-- ========================= -->
+            <!-- QUICK ACTIONS -->
+            <!-- ========================= -->
+
+            <div class="dashboard-section">
+
+                <div class="section-header">
+
+                    <div class="section-title">
+
+                        <lightning-icon icon-name="utility:apps" size="small">
+                        </lightning-icon>
+
+                        Quick Actions
+
+                    </div>
+
+                </div>
+
+                <div class="quick-actions">
+
+                    <lightning-button label="Search New Flight" icon-name="utility:search" variant="brand"
+                        onclick={handleSearchFlight}>
+                    </lightning-button>
+
+                    <lightning-button label="Create Walk-In Booking" icon-name="utility:add"
+                        onclick={handleWalkInBooking}>
+                    </lightning-button>
+
+                </div>
+
+            </div>
+
+
+
+
+            <!-- ========================= -->
+            <!-- RECENT BOOKINGS -->
+            <!-- ========================= -->
+
+            <div class="dashboard-section">
+
+                <div class="section-header">
+
+                    <div class="section-title">
+
+                        <lightning-icon icon-name="standard:orders" size="small">
+                        </lightning-icon>
+
+                        Recent Bookings
+
+                    </div>
+
+                    <lightning-button label="View All" variant="base" icon-name="utility:new_window"
+                        onclick={handleViewAll}>
+                    </lightning-button>
+
+                </div>
+
+                <div class="section-divider"></div>
+
+                <lightning-datatable key-field="Id" data={dashboard.recentBookings} columns={columns}
+                    hide-checkbox-column>
+
+                </lightning-datatable>
+
+            </div>
+
+        </lightning-card>
+
+    </div>
+
+</template>

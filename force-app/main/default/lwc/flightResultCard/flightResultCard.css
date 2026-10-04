@@ -1,0 +1,203 @@
+.flight-card {
+    background: #ffffff;
+    border: 1px solid #d8dde6;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: all 0.2s ease;
+    margin-bottom: 12px;
+}
+
+.flight-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+.selected {
+    border: 3px solid #0176d3;
+    background: #eef6ff;
+}
+
+.route{
+
+    font-size:22px;
+
+    font-weight:700;
+
+}
+
+.time{
+
+    font-size:20px;
+
+    font-weight:bold;
+
+}
+
+.date{
+
+    color:#666;
+
+    font-size:13px;
+
+}
+
+.price{
+
+    color:#017d5a;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+}
+
+.button-container{
+
+    margin-top:25px;
+
+    text-align:center;
+
+}
+
+.flight-button{
+
+    width:180px;
+
+}
+.airline-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+}
+
+.airline-logo{
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    background:#0176d3;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:22px;
+
+}
+
+.airline-name{
+
+    font-size:22px;
+
+    font-weight:700;
+
+}
+
+.flight-number{
+
+    color:#666;
+
+    font-size:13px;
+
+}
+.route-container{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin:25px 0;
+
+}
+
+.airport-section{
+
+    text-align:center;
+
+}
+
+.airport{
+
+    font-size:28px;
+
+    font-weight:bold;
+
+}
+
+.flight-path{
+
+    font-size:24px;
+
+    color:#0176d3;
+
+}
+
+.time{
+
+    font-size:20px;
+
+    font-weight:bold;
+
+}
+
+.date{
+
+    color:#666;
+
+}
+
+.footer-section{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.footer-title{
+
+    font-weight:bold;
+
+    margin-bottom:5px;
+
+}
+
+.price{
+
+    color:#017d5a;
+
+    font-size:28px;
+
+    font-weight:bold;
+
+}
+
+.flight-button{
+
+    width:220px;
+
+}
+.cabin-badge {
+    margin-top: 4px;
+    display: inline-block;
+    background: #eef4ff;
+    color: #0176d3;
+    font-weight: 600;
+    border-radius: 12px;
+    padding: 2px 10px;
+}

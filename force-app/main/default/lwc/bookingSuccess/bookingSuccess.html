@@ -1,0 +1,115 @@
+<template>
+
+    <div class="success-wrapper">
+
+        <!-- Success Banner -->
+
+        <div class="success-banner">
+
+            <div class="success-icon">
+                ✅
+            </div>
+
+            <div>
+
+                <div class="success-title">
+                    Booking Confirmed
+                </div>
+
+                <div class="success-subtitle">
+                    Your ticket has been booked successfully.
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Booking Summary -->
+
+        <div class="summary-card">
+
+            <div class="summary-title">
+                ✈ Booking Details
+            </div>
+
+            <div class="row">
+
+                <span>Booking ID</span>
+
+                <strong>{bookingId}</strong>
+
+            </div>
+
+            <div class="row">
+
+                <span>Passenger</span>
+
+                <strong>{passengerName}</strong>
+
+            </div>
+
+            <div class="row">
+
+                <span>Airline</span>
+
+                <strong>{selectedFlight.airline}</strong>
+
+            </div>
+
+            <div class="row">
+
+                <span>Flight Number</span>
+
+                <strong>{selectedFlight.flightNumber}</strong>
+
+            </div>
+
+            <div class="row">
+
+                <span>Route</span>
+
+                <strong>
+
+                    {selectedFlight.origin}
+
+                    →
+
+                    {selectedFlight.destination}
+
+                </strong>
+
+            </div>
+
+            <div class="row">
+
+                <span>Total Paid</span>
+
+                <strong class="price">
+
+                    {totalFare}
+
+                </strong>
+
+            </div>
+
+        </div>
+
+        <!-- Buttons -->
+
+        <div class="button-area">
+
+            <lightning-button
+
+                variant="brand"
+
+                label="✈ Book Another Flight"
+
+                onclick={handleNewBooking}>
+
+            </lightning-button>
+
+        </div>
+
+    </div>
+
+</template>

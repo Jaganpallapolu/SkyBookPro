@@ -1,0 +1,139 @@
+.flight-results-container{
+
+    max-width:1250px;
+
+    margin:2rem auto;
+
+    padding:0 1rem;
+
+}
+
+/* Header */
+
+.result-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    margin-bottom:1.5rem;
+
+}
+
+.result-header h2{
+
+    font-size:2rem;
+
+    font-weight:700;
+
+    color:#16325c;
+
+}
+
+.result-header p{
+
+    margin-top:.35rem;
+
+    color:#54698d;
+
+    font-size:.95rem;
+
+}
+
+/* Page Indicator */
+
+.page-indicator{
+
+    background:#0176d3;
+
+    color:white;
+
+    padding:.7rem 1.2rem;
+
+    border-radius:30px;
+
+    font-weight:600;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.12);
+
+}
+
+/* Pagination */
+
+.pagination{
+
+    margin:2rem auto 0;
+
+    max-width:520px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:white;
+
+    border-radius:50px;
+
+    padding:.9rem 1.3rem;
+
+    box-shadow:0 8px 24px rgba(0,0,0,.08);
+
+}
+
+.page-text{
+
+    font-size:1rem;
+
+    color:#16325c;
+
+}
+
+/* Responsive */
+
+@media (max-width:768px){
+
+    .result-header{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        gap:1rem;
+
+    }
+
+    .pagination{
+
+        flex-direction:column;
+
+        gap:1rem;
+
+        border-radius:18px;
+
+    }
+
+}
+
+/* ===========================
+   Filter Toolbar
+=========================== */
+
+.filter-toolbar{
+
+    background:white;
+
+    padding:1rem;
+
+    border-radius:18px;
+
+    margin-bottom:1.5rem;
+
+    box-shadow:0 6px 18px rgba(0,0,0,.08);
+
+}

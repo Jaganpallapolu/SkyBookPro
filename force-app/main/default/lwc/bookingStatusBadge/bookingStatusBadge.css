@@ -1,0 +1,20 @@
+.confirmed{
+
+    --slds-c-badge-color-background:#2e844a;
+    --slds-c-badge-text-color:#ffffff;
+
+}
+
+.cancelled{
+
+    --slds-c-badge-color-background:#ba0517;
+    --slds-c-badge-text-color:#ffffff;
+
+}
+
+.draft{
+
+    --slds-c-badge-color-background:#ffb75d;
+    --slds-c-badge-text-color:#16325c;
+
+}

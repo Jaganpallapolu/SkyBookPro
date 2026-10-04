@@ -1,0 +1,243 @@
+<template>
+
+    <div class="booking-wrapper">
+
+        <!-- Hero Header -->
+        <div class="hero">
+
+            <div class="hero-left">
+                <div class="hero-title">
+                    ✈ Review Your Booking
+                </div>
+
+                <div class="hero-subtitle">
+                    Please verify your journey before confirming your booking.
+                </div>
+            </div>
+
+            <div class="hero-route">
+                {selectedFlight.origin}
+                →
+                {selectedFlight.destination}
+            </div>
+
+        </div>
+
+        <!-- Flight Summary -->
+
+        <div class="section">
+
+            <div class="section-title">
+                ✈ Flight Summary
+            </div>
+
+            <div class="flight-card">
+
+                <div class="flight-airline">
+
+                    {selectedFlight.airline}
+
+                </div>
+
+                <div class="flight-route">
+
+                    {selectedFlight.origin}
+
+                    ✈
+
+                    {selectedFlight.destination}
+
+                </div>
+
+                <lightning-layout multiple-rows>
+
+                    <lightning-layout-item size="4" small-device-size="12" medium-device-size="4">
+
+                        <div class="info-box">
+
+                            <span class="label">Flight</span>
+
+                            <span class="value">
+
+                                {selectedFlight.flightNumber}
+
+                            </span>
+
+                        </div>
+
+                    </lightning-layout-item>
+
+                    <lightning-layout-item size="4" small-device-size="12" medium-device-size="4">
+
+                        <div class="info-box">
+
+                            <span class="label">Cabin</span>
+
+                            <span class="value">
+
+                                {selectedFlight.cabinClass}
+
+                            </span>
+
+                        </div>
+
+                    </lightning-layout-item>
+
+                    <lightning-layout-item size="4" small-device-size="12" medium-device-size="4">
+
+                        <div class="info-box">
+
+                            <span class="label">Fare</span>
+
+                            <span class="price">
+
+                                {formattedTotalFare}
+
+                            </span>
+
+                        </div>
+
+                    </lightning-layout-item>
+
+                </lightning-layout>
+
+            </div>
+
+        </div>
+
+        <!-- Passenger Summary -->
+
+        <div class="section">
+
+            <div class="section-title">
+                👤 Passenger Summary
+            </div>
+
+            <lightning-layout multiple-rows>
+
+                <template for:each={passengers} for:item="passenger">
+
+                    <lightning-layout-item
+                        key={passenger.id}
+                        size="12"
+                        medium-device-size="6"
+                        large-device-size="6"
+                        padding="around-small">
+
+                        <div class="passenger-card">
+
+                            <div class="passenger-name">
+
+                                {passenger.title}
+                                {passenger.firstName}
+                                {passenger.lastName}
+
+                            </div>
+
+                            <div class="badge-row">
+
+                                <span class="badge">
+
+                                    {passenger.passengerType}
+
+                                </span>
+
+                                <span class="badge">
+
+                                    {passenger.gender}
+
+                                </span>
+
+                                <span class="badge">
+
+                                    🍽 {passenger.mealPreference}
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </lightning-layout-item>
+
+                </template>
+
+            </lightning-layout>
+
+        </div>
+
+        <!-- Fare Summary -->
+
+        <div class="section">
+
+            <div class="section-title">
+                💳 Fare Summary
+            </div>
+
+            <div class="fare-row">
+
+                <span>Passengers</span>
+
+                <span>{passengerCount}</span>
+
+            </div>
+
+            <div class="fare-row">
+
+                <span>Cabin Class</span>
+
+                <span>{selectedFlight.cabinClass}</span>
+
+            </div>
+
+            <div class="fare-row">
+
+                <span>Flight Fare</span>
+
+                <span>{formattedTotalFare}</span>
+
+            </div>
+
+            <hr>
+
+            <div class="fare-total">
+
+                <span>Total Payable</span>
+
+                <span>{formattedTotalFare}</span>
+
+            </div>
+
+        </div>
+
+        <!-- Buttons -->
+
+        <div class="button-row">
+
+            <lightning-button
+
+                label="← Back"
+
+                variant="neutral"
+
+                onclick={handleBack}>
+
+            </lightning-button>
+
+            <lightning-button
+
+                label="Confirm Booking →"
+
+                variant="brand"
+
+                onclick={handleConfirmBooking}
+
+                disabled={isBooking}>
+
+            </lightning-button>
+
+        </div>
+
+    </div>
+
+</template>

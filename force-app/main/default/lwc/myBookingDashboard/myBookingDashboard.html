@@ -1,0 +1,142 @@
+<template>
+
+    <div class="booking-wrapper">
+
+        <!-- Header -->
+
+        <div class="booking-header">
+
+            <div>
+
+                <h1>🧳 My Bookings</h1>
+
+                <p>
+                    View, manage and track all your flight reservations.
+                </p>
+
+            </div>
+
+            <div class="booking-count">
+
+                {bookings.length} Booking(s)
+
+            </div>
+
+        </div>
+
+        <!-- Filter Section -->
+
+        <div class="filter-section">
+
+            <lightning-button-group>
+
+                <lightning-button label="All" onclick={showAll}>
+                </lightning-button>
+
+                <lightning-button label="Upcoming" onclick={showUpcoming}>
+                </lightning-button>
+
+                <lightning-button label="Past" onclick={showPast}>
+                </lightning-button>
+
+                <lightning-button label="Cancelled" onclick={showCancelled}>
+                </lightning-button>
+
+            </lightning-button-group>
+
+        </div>
+
+        <!-- Booking Table -->
+
+        <div class="table-section">
+
+            <template if:true={bookings}>
+
+                <c-booking-datatable key-field="id" data={pagedBookings} columns={columns} hide-checkbox-column
+                    onrowaction={handleRowAction}>
+
+                </c-booking-datatable>
+
+            </template>
+
+            <template if:true={error}>
+
+                <div class="error-box">
+
+                    Unable to load bookings.
+
+                </div>
+
+            </template>
+
+        </div>
+
+        <!-- Pagination -->
+
+        <template if:true={bookings.length}>
+
+            <div class="pagination">
+
+                <lightning-button label="Previous" icon-name="utility:chevronleft" onclick={handlePrevious}
+                    disabled={disablePrevious}>
+
+                </lightning-button>
+
+                <div class="page-info">
+
+                    Page
+
+                    <strong>{pageNumber}</strong>
+
+                    of
+
+                    <strong>{totalPages}</strong>
+
+                </div>
+
+                <lightning-button label="Next" icon-name="utility:chevronright" icon-position="right"
+                    onclick={handleNext} disabled={disableNext}>
+
+                </lightning-button>
+
+            </div>
+
+        </template>
+
+        <!-- Cancellation Modal -->
+
+        <template if:true={showCancellationModal}>
+
+            <c-cancellation-modal is-open={showCancellationModal} booking-id={selectedBookingId}
+                onclose={handleCloseModal} onconfirm={handleConfirmCancellation}>
+
+            </c-cancellation-modal>
+
+        </template>
+
+
+        <template if:true={showRefundTracker}>
+
+            <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+
+                <div class="slds-modal__container">
+
+                    <div class="slds-modal__content slds-p-around_medium">
+
+                        <c-refund-status-tracker booking-id={selectedBookingId} onclose={handleCloseRefundTracker}>
+
+                        </c-refund-status-tracker>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <div class="slds-backdrop slds-backdrop_open"></div>
+
+        </template>
+
+    </div>
+
+</template>

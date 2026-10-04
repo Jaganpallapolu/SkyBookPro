@@ -1,0 +1,88 @@
+<template>
+
+    <div class="page-container">
+
+        <!-- Page Header -->
+
+        <div class="page-header">
+
+            <h1>👤 Passenger Details</h1>
+
+            <p>
+                Complete passenger information before reviewing your booking.
+            </p>
+
+        </div>
+
+        <!-- Flight Summary -->
+
+        <div class="flight-summary-card">
+
+            <div class="summary-title">
+
+                ✈ Selected Flight
+
+            </div>
+
+            <div class="summary-content">
+
+                <div>
+
+                    <div class="airline">
+                        {selectedFlight.airline}
+                    </div>
+
+                    <div class="route">
+                        {selectedFlight.origin}
+                        ✈
+                        {selectedFlight.destination}
+                    </div>
+
+                </div>
+
+                <div>
+
+                    <div class="badge">
+                        {selectedFlight.cabinClass}
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Passenger Cards -->
+
+        <template
+            for:each={passengers}
+            for:item="passenger">
+
+            <div
+                key={passenger.id}
+                class="passenger-wrapper">
+
+                <c-passenger-card
+                    passenger={passenger}
+                    onpassengerchange={handlePassengerChange}>
+                </c-passenger-card>
+
+            </div>
+
+        </template>
+
+        <!-- Button -->
+
+        <div class="button-area">
+
+            <lightning-button
+                variant="brand"
+                label="Review Booking →"
+                onclick={handleReviewBooking}>
+            </lightning-button>
+
+        </div>
+
+    </div>
+
+</template>

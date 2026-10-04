@@ -1,0 +1,281 @@
+:host{
+
+    display:block;
+
+    margin:2rem auto;
+
+}
+
+/* Wrapper */
+
+.dashboard-wrapper{
+
+    max-width:1200px;
+
+    margin:auto;
+
+}
+
+/* Dashboard */
+
+.dashboard-container{
+
+    padding:1rem;
+
+}
+
+/* KPI Cards */
+
+.metric-card{
+
+    background:white;
+
+    border-radius:16px;
+
+    padding:1.75rem;
+
+    text-align:center;
+
+    box-shadow:0 6px 16px rgba(0,0,0,.08);
+
+    transition:.25s;
+
+    min-height:180px;
+
+    border-top:5px solid #0176d3;
+
+}
+
+.metric-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 12px 24px rgba(0,0,0,.15);
+
+}
+
+/* Icons */
+
+.metric-icon{
+
+    font-size:2.3rem;
+
+    margin-bottom:.75rem;
+
+}
+
+/* Heading */
+
+.metric-title{
+
+    color:#5f6b7a;
+
+    font-size:15px;
+
+    margin-bottom:12px;
+
+}
+
+/* Value */
+
+.metric-value{
+
+    font-size:2rem;
+
+    font-weight:700;
+
+    color:#16325c;
+
+}
+
+/* Individual Colors */
+
+.bookings{
+
+    border-top-color:#0176d3;
+
+}
+
+.revenue{
+
+    border-top-color:#2e844a;
+
+}
+
+.pending{
+
+    border-top-color:#ffb75d;
+
+}
+
+.cancellation{
+
+    border-top-color:#ba0517;
+
+}
+
+/* Sections */
+
+.section-wrapper{
+
+    padding:.6rem 1rem;
+
+}
+/* Quick Actions */
+
+.quick-actions{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:1rem;
+
+    flex-wrap:wrap;
+
+}
+/* Responsive */
+
+@media(max-width:768px){
+
+    .metric-card{
+
+        min-height:150px;
+
+    }
+
+    .metric-value{
+
+        font-size:1.6rem;
+
+    }
+
+    .quick-actions{
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+}
+
+
+
+.header-title{
+
+    font-size:1.2rem;
+
+    font-weight:600;
+
+    color:#16325c;
+
+}
+
+.table-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:14px;
+
+    padding:0 8px;
+
+}
+
+.table-divider{
+
+    border-bottom:1px solid #e5e5e5;
+
+    margin-bottom:15px;
+
+}
+
+.action-container{
+
+    margin:1rem;
+
+    padding:1rem;
+
+    background:white;
+
+    border-radius:14px;
+
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+
+}
+
+.action-title{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:.5rem;
+
+    font-size:20px;
+
+    font-weight:600;
+
+    margin-bottom:1rem;
+
+}
+
+/* ===========================
+   Reusable Section
+=========================== */
+
+.dashboard-section{
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    box-shadow:0 4px 14px rgba(0,0,0,.08);
+
+    padding:1.5rem;
+
+    margin-top:1.5rem;
+
+}
+
+.section-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:1rem;
+
+}
+
+.section-title{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:.6rem;
+
+    font-size:22px;
+
+    font-weight:600;
+
+    color:#16325c;
+
+}
+
+.section-divider{
+
+    height:1px;
+
+    background:#e8e8e8;
+
+    margin-bottom:1rem;
+
+}

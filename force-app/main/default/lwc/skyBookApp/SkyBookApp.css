@@ -1,0 +1,81 @@
+.page-container {
+
+    max-width: 1280px;
+
+    margin: 0 auto;
+
+    padding: 1.5rem;
+
+}
+:host{
+
+    display:block;
+
+    background:#f4f6f9;
+
+    min-height:100vh;
+
+}
+
+.hero-section{
+
+    scroll-margin-top:90px;
+
+}
+
+.search-section{
+
+    scroll-margin-top:90px;
+
+}
+
+.results-section{
+
+    scroll-margin-top:90px;
+
+}
+
+.bookings-section{
+
+    scroll-margin-top:90px;
+
+}
+
+.dashboard-section{
+
+    scroll-margin-top:90px;
+
+}
+
+.hero-section,
+.search-section,
+.results-section,
+.passenger-section,
+.confirmation-section,
+.success-section,
+.bookings-section,
+.dashboard-section{
+
+    animation:fadeIn .35s ease-in-out;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(12px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}

@@ -1,0 +1,173 @@
+.success-wrapper{
+
+    max-width:850px;
+
+    margin:3rem auto;
+
+    padding:1rem;
+
+}
+
+/* Banner */
+
+.success-banner{
+
+    background:linear-gradient(135deg,#2e844a,#1d6f3b);
+
+    color:white;
+
+    border-radius:20px;
+
+    padding:2rem;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:1.5rem;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.12);
+
+}
+
+.success-icon{
+
+    width:90px;
+
+    height:90px;
+
+    border-radius:50%;
+
+    background:white;
+
+    color:#2e844a;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:42px;
+
+    font-weight:bold;
+
+}
+
+.success-title{
+
+    font-size:2rem;
+
+    font-weight:700;
+
+}
+
+.success-subtitle{
+
+    margin-top:.4rem;
+
+    opacity:.95;
+
+}
+
+/* Summary */
+
+.summary-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:2rem;
+
+    margin-top:2rem;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+}
+
+.summary-title{
+
+    font-size:1.3rem;
+
+    font-weight:700;
+
+    color:#16325c;
+
+    margin-bottom:1.5rem;
+
+}
+
+.row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:1rem 0;
+
+    border-bottom:1px solid #ecebea;
+
+    font-size:1rem;
+
+}
+
+.row:last-child{
+
+    border-bottom:none;
+
+}
+
+.price{
+
+    color:#2e844a;
+
+    font-size:1.3rem;
+
+    font-weight:700;
+
+}
+
+/* Buttons */
+
+.button-area{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-top:2rem;
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.success-banner{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+.success-icon{
+
+    margin-bottom:1rem;
+
+}
+
+.row{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:.35rem;
+
+}
+
+}

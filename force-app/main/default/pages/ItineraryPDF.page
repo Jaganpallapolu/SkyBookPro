@@ -1,0 +1,153 @@
+<apex:page controller="ItineraryController"
+           renderAs="pdf"
+           showHeader="false"
+           sidebar="false"
+           applyBodyTag="false">
+
+<html>
+
+<head>
+
+<style>
+
+body{
+    font-family:Arial;
+    font-size:12px;
+    padding:20px;
+}
+
+.header{
+    text-align:center;
+    background:#0176d3;
+    color:white;
+    padding:15px;
+}
+
+.section{
+    margin-top:20px;
+    border:1px solid #ddd;
+    padding:15px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+td{
+    padding:8px;
+    border-bottom:1px solid #ddd;
+}
+
+.label{
+    font-weight:bold;
+    width:35%;
+}
+
+.footer{
+    margin-top:30px;
+    text-align:center;
+    font-size:11px;
+    color:gray;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+<h1>SkyBook Pro</h1>
+
+<h2>Flight Itinerary</h2>
+
+</div>
+
+<div class="section">
+
+<table>
+
+<tr>
+<td class="label">Booking Reference</td>
+<td>{!booking.Name}</td>
+</tr>
+
+<tr>
+<td class="label">Passenger</td>
+<td>
+{!booking.Passenger__r.FirstName}
+&nbsp;
+{!booking.Passenger__r.LastName}
+</td>
+</tr>
+
+<tr>
+<td class="label">Airline</td>
+<td>{!booking.Flight__r.Airline_Name__c}</td>
+</tr>
+
+<tr>
+<td class="label">Flight Number</td>
+<td>{!booking.Flight__r.Flight_Number__c}</td>
+</tr>
+
+<tr>
+<td class="label">Route</td>
+<td>
+{!booking.Flight__r.Origin_Airport__c}
+ →
+{!booking.Flight__r.Destination_Airport__c}
+</td>
+</tr>
+
+<tr>
+<td class="label">Departure</td>
+<td>{!booking.Flight__r.Depature_DateTime__c}</td>
+</tr>
+
+<tr>
+<td class="label">Arrival</td>
+<td>{!booking.Flight__r.Arrival_DateTime__c}</td>
+</tr>
+
+<tr>
+<td class="label">Seat Class</td>
+<td>{!booking.Seat_Class__c}</td>
+</tr>
+
+<tr>
+<td class="label">Booking Status</td>
+<td>{!booking.Booking_Status__c}</td>
+</tr>
+
+<tr>
+<td class="label">Booking Date</td>
+<td>{!booking.Booking_Date__c}</td>
+</tr>
+
+<tr>
+<td class="label">Total Paid</td>
+<td>₹ {!booking.Total_Amount__c}</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="footer">
+
+Thank you for choosing SkyBook Pro.
+
+<br/>
+
+Have a pleasant journey!
+
+</div>
+
+</body>
+
+</html>
+
+</apex:page>

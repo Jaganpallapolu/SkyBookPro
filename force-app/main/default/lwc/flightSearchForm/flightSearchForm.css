@@ -1,0 +1,102 @@
+:host{
+
+    display:block;
+
+    padding:2rem auto;
+
+}
+
+.search-wrapper{
+
+    max-width:1000px;
+
+    margin:0 auto;
+
+}
+
+lightning-card{
+
+    border-radius:18px;
+
+}
+
+
+@media (max-width:768px){
+
+    .search-wrapper{
+
+        max-width:100%;
+
+        padding:0 .5rem;
+
+    }
+
+
+}
+
+.search-container{
+
+    max-width:1000px;
+
+    margin:auto;
+
+    background:white;
+
+    border-radius:20px;
+
+    box-shadow:0 8px 24px rgba(0,0,0,.08);
+
+
+}
+
+.search-header{
+
+    background:linear-gradient(135deg,#0176d3,#0b5cab);
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:1rem;
+
+    padding:1.5rem 2rem;
+
+}
+
+.search-header h1{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    margin:0;
+
+}
+
+.search-header p{
+
+    margin-top:.3rem;
+
+    opacity:.9;
+
+}
+
+.search-icon{
+
+    font-size:38px;
+
+}
+
+.search-body{
+
+    padding:2rem;
+    overflow: visible;
+
+}
+.search-btn{
+
+    zoom:1.15;
+
+}

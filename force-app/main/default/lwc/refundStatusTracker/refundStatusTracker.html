@@ -1,0 +1,236 @@
+<template>
+
+    <template if:true={refund}>
+
+        <div class="refund-container">
+
+            <!-- Header -->
+
+            <div class="header">
+
+                <div>
+
+                    <div class="title">
+                        💰 Refund Status Tracker
+                    </div>
+
+                    <div class="subtitle">
+                        Track your refund progress in real time
+                    </div>
+
+                </div>
+
+                <div class={statusClass}>
+
+                    {refund.Refund_Status__c}
+
+                </div>
+
+            </div>
+
+            <!-- Booking Card -->
+
+            <div class="info-card">
+
+                <div class="card-title">
+                    Booking Information
+                </div>
+
+                <lightning-layout multiple-rows>
+
+                    <lightning-layout-item
+                        size="4"
+                        small-device-size="12"
+                        medium-device-size="4"
+                        large-device-size="4"
+                        padding="around-small">
+
+                        <div class="label">
+                            Booking Reference
+                        </div>
+
+                        <div class="value">
+                            {refund.Booking__r.Name}
+                        </div>
+
+                    </lightning-layout-item>
+
+                    <lightning-layout-item
+                        size="4"
+                        small-device-size="12"
+                        medium-device-size="4"
+                        large-device-size="4"
+                        padding="around-small">
+
+                        <div class="label">
+                            Booking Status
+                        </div>
+
+                        <div class="value">
+                            {refund.Booking__r.Booking_Status__c}
+                        </div>
+
+                    </lightning-layout-item>
+
+                    <lightning-layout-item
+                        size="4"
+                        small-device-size="12"
+                        medium-device-size="4"
+                        large-device-size="4"
+                        padding="around-small">
+
+                        <div class="label">
+                            Refund Amount
+                        </div>
+
+                        <div class="amount">
+
+                            {formattedRefundAmount}
+
+                        </div>
+
+                    </lightning-layout-item>
+
+                </lightning-layout>
+
+            </div>
+
+            <!-- Progress -->
+
+            <div class="info-card">
+
+                <div class="card-title">
+
+                    Refund Progress
+
+                </div>
+
+                <div class="progress-section">
+
+                    <lightning-progress-bar
+
+                        value={progress}
+
+                        size="large">
+
+                    </lightning-progress-bar>
+
+                    <div class="progress-text">
+
+                        {progress}% Completed
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Timeline -->
+
+            <div class="info-card">
+
+                <div class="card-title">
+
+                    Refund Timeline
+
+                </div>
+
+                <ul class="timeline">
+
+                    <li class={requestedClass}>
+
+                        <span class="circle"></span>
+
+                        Request Received
+
+                        <template if:true={refund.Requested_Date__c}>
+
+                            <div class="date">
+
+                                {refund.Requested_Date__c}
+
+                            </div>
+
+                        </template>
+
+                    </li>
+
+                    <li class={processingClass}>
+
+                        <span class="circle"></span>
+
+                        Refund Processing
+
+                    </li>
+
+                    <li class={completedClass}>
+
+                        <span class="circle"></span>
+
+                        Refund Completed
+
+                        <template if:true={refund.Completed_Date__c}>
+
+                            <div class="date">
+
+                                {refund.Completed_Date__c}
+
+                            </div>
+
+                        </template>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <!-- Reference -->
+
+            <div class="info-card">
+
+                <div class="card-title">
+
+                    Refund Reference
+
+                </div>
+
+                <div class="reference">
+
+                    {refund.Refund_Reference__c}
+
+                </div>
+
+            </div>
+
+            <!-- Footer -->
+
+            <div class="footer">
+
+                <lightning-button
+
+                    label="Close"
+
+                    variant="neutral"
+
+                    onclick={handleClose}>
+
+                </lightning-button>
+
+            </div>
+
+        </div>
+
+    </template>
+
+    <template if:false={refund}>
+
+        <lightning-spinner
+
+            alternative-text="Loading Refund Status">
+
+        </lightning-spinner>
+
+    </template>
+
+</template>

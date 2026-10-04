@@ -1,0 +1,142 @@
+<template>
+
+        <div class={cardClass}>
+
+            <div class="slds-p-around_medium">
+
+                <!-- Header -->
+
+                <div class="airline-header">
+
+                    <div class="airline-logo">
+
+                        ✈
+
+                    </div>
+
+                    <div class="airline-details">
+
+                        <div class="airline-name">
+
+                            {offer.airline}
+
+                        </div>
+ 
+                        <span class="slds-badge cabin-badge">
+                            {offer.cabinClass}
+                        </span>
+                        <div class="flight-number">
+
+                            Flight {offer.flightNumber}
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <hr class="slds-m-vertical_medium" />
+
+                <!-- Flight Route -->
+
+                <div class="route-container">
+
+                    <div class="airport-section">
+
+                        <div class="time">
+
+                            {formattedDepartureTime}
+
+                        </div>
+
+                        <div class="airport">
+
+                            {offer.origin}
+
+                        </div>
+
+                        <div class="date">
+
+                            {formattedDepartureDate}
+
+                        </div>
+
+                    </div>
+
+                    <div class="flight-path">
+
+                        ✈──────────►
+
+                    </div>
+
+                    <div class="airport-section">
+
+                        <div class="time">
+
+                            {formattedArrivalTime}
+
+                        </div>
+
+                        <div class="airport">
+
+                            {offer.destination}
+
+                        </div>
+
+                        <div class="date">
+
+                            {formattedArrivalDate}
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <hr class="slds-m-vertical_medium" />
+
+                <!-- Footer -->
+
+                <div class="footer-section">
+
+                    <div>
+
+                        <div class="footer-title">
+
+                            🕒 Duration
+
+                        </div>
+
+                        <div>
+
+                            {formattedDuration}
+
+                        </div>
+
+                    </div>
+
+                    <div class="price-section">
+
+                        <div class="footer-title">
+
+                            Total Fare
+
+                        </div>
+
+                        <div class="price">
+
+                            {formattedPrice}
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <lightning-button class="flight-button" variant={buttonVariant} label={buttonLabel}
+                    onclick={selectFlight}>
+
+                </lightning-button>
+
+            </div>
+        </div>
+</template>

@@ -1,0 +1,82 @@
+<template>
+
+    <div class="page-container">
+
+        <c-navigation-bar onnavigate={handleNavigation} current-view={currentView}></c-navigation-bar>
+
+        <template if:true={showHome}>
+            <div class="hero-section">
+                <c-hero-section></c-hero-section>
+            </div>
+
+            <div class="search-section">
+                <c-flight-search-form onsearchsuccess={handleSearchSuccess}>
+                </c-flight-search-form>
+            </div>
+
+            <div class="results-section">
+                <template if:true={hasFlightOffers}>
+
+                    <c-flight-result-list offers={flightOffers} selected-offer-id={selectedOfferId}
+                        onflightselect={handleFlightSelect}>
+                    </c-flight-result-list>
+
+                </template>
+            </div>
+
+            <template if:true={showPassengerForm}>
+
+                <c-passenger-details-form selected-flight={selectedFlight} passenger-count={passengerCount}
+                    onreviewbooking={handleReviewBooking}>
+                </c-passenger-details-form>
+
+            </template>
+
+            <template if:true={showBookingConfrimation}>
+
+                <c-booking-confrimation selected-flight={selectedFlight} passengers={passengers} is-booking={isBooking}
+                    onconfirmbooking={handleConfirmBooking} onback={handleBack}>
+                </c-booking-confrimation>
+
+            </template>
+
+            <template if:true={showBookingSuccess}>
+
+                <c-booking-success booking-id={bookingId} selected-flight={selectedFlight} passengers={passengers}
+                    onnewbooking={handleNewBooking}>
+                </c-booking-success>
+
+            </template>
+        </template>
+
+        <div class="bookings-section">
+            <template if:true={showBookings}>
+
+                <c-my-booking-dashboard>
+
+                </c-my-booking-dashboard>
+
+            </template>
+        </div>
+
+        <div class="dashboard-section">
+            <template if:true={showDashboard}>
+
+                <c-agent-dashboard onsearchflight={handleNavigation}>
+                </c-agent-dashboard>
+
+            </template>
+
+        
+        </div>
+
+        <template if:true={showHome}>
+
+            <c-footer-section></c-footer-section>
+
+        </template>
+
+
+    </div>
+
+</template>

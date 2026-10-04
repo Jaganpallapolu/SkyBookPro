@@ -1,0 +1,90 @@
+<template>
+
+    <header class="navbar">
+
+        <!-- Logo -->
+
+        <div
+            class="logo"
+            data-section="home"
+            onclick={navigate}>
+
+            <span class="logo-icon">✈</span>
+
+            <span class="logo-text">
+
+                SkyBook Pro
+
+            </span>
+
+        </div>
+
+        <!-- Navigation Menu -->
+
+        <nav class="menu">
+
+            <a
+                href="javascript:void(0)"
+                class={homeClass}
+                data-section="home"
+                onclick={navigate}>
+
+                Home
+
+            </a>
+
+            <a
+                href="javascript:void(0)"
+                class={searchClass}
+                data-section="search"
+                onclick={navigate}>
+
+                Search Flights
+
+            </a>
+
+            <a
+                href="javascript:void(0)"
+                class={bookingClass}
+                data-section="bookings"
+                onclick={navigate}>
+
+                My Bookings
+
+            </a>
+
+            <a
+                href="javascript:void(0)"
+                class={dashboardClass}
+                data-section="dashboard"
+                onclick={navigate}>
+
+                Dashboard
+
+            </a>
+
+        </nav>
+
+        <!-- Right Side -->
+
+        <div class="user">
+
+            <lightning-icon
+
+                icon-name="standard:user"
+
+                size="small">
+
+            </lightning-icon>
+
+            <span>
+
+                Agent
+
+            </span>
+
+        </div>
+
+    </header>
+
+</template>

@@ -1,0 +1,84 @@
+<template>
+    <div class="search-wrapper">
+        <div class="search-container">
+
+            <div class="search-header">
+
+                <div class="search-icon">
+                    ✈
+                </div>
+
+                <div>
+
+                    <h1>Search Flights</h1>
+
+                    <p>
+                        Find the best fares for your journey
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="search-body">
+
+                <div class="slds-p-around_x-large">
+
+                    <lightning-layout multiple-rows>
+
+                        <lightning-layout-item size="12" medium-device-size="6" large-device-size="6"
+                            padding="horizontal-small">
+                            <lightning-combobox label="Origin" value={origin} options={airportOptions}
+                                placeholder="Select Origin" onchange={handleOrigin}>
+                            </lightning-combobox>
+                        </lightning-layout-item>
+
+                        <lightning-layout-item size="12" medium-device-size="6" large-device-size="6"
+                            padding="horizontal-small">
+                            <lightning-combobox label="Destination" value={destination} options={airportOptions}
+                                placeholder="Select Destination" onchange={handleDestination}></lightning-combobox>
+                        </lightning-layout-item>
+
+                        <lightning-layout-item size="12" medium-device-size="6" large-device-size="6"
+                            padding="horizontal-small">
+                            <lightning-input type="date" label="Departure Date" value={departureDate}
+                                onchange={handleDepartureDate}>
+                            </lightning-input>
+                        </lightning-layout-item>
+
+                        <lightning-layout-item size="12" medium-device-size="6" large-device-size="3" padding="horizontal-small">
+                            <lightning-input type="number" label="Passengers" min="1" value={adults}
+                                onchange={handleAdults}>
+                            </lightning-input>
+                        </lightning-layout-item>
+
+                        <lightning-layout-item size="12" medium-device-size="6" large-device-size="3" padding="horizontal-small">
+                            <lightning-combobox label="Cabin Class" value={cabinClass} options={cabinOptions}
+                                onchange={handleCabinClass}>
+                            </lightning-combobox>
+                        </lightning-layout-item>
+
+                    </lightning-layout>
+
+                    <div class="slds-align_absolute-center slds-m-top_large">
+
+                        <lightning-button class="search-btn" label="Search Flights" variant="brand"
+                            icon-name="utility:search" onclick={handleSearch}>
+                        </lightning-button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <template if:true={isLoading}>
+
+            <lightning-spinner alternative-text="Searching Flights..." size="medium">
+            </lightning-spinner>
+
+        </template>
+    </div>
+
+</template>

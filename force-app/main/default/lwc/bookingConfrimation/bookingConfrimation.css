@@ -1,0 +1,283 @@
+.booking-wrapper{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    padding:2rem 1rem 4rem;
+
+}
+
+/* Hero */
+
+.hero{
+
+    background:linear-gradient(135deg,#0176d3,#005fb2);
+
+    color:white;
+
+    border-radius:20px;
+
+    padding:2rem;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:2rem;
+
+    flex-wrap:wrap;
+
+}
+
+.hero-title{
+
+    font-size:2rem;
+
+    font-weight:700;
+
+}
+
+.hero-subtitle{
+
+    margin-top:.4rem;
+
+    opacity:.9;
+
+}
+
+.hero-route{
+
+    font-size:1.8rem;
+
+    font-weight:700;
+
+}
+
+/* Sections */
+
+.section{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:1.8rem;
+
+    margin-bottom:2rem;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+}
+
+.section-title{
+
+    font-size:1.3rem;
+
+    font-weight:700;
+
+    color:#16325c;
+
+    margin-bottom:1.5rem;
+
+}
+
+/* Flight */
+
+.flight-airline{
+
+    font-size:1.5rem;
+
+    font-weight:700;
+
+    color:#16325c;
+
+}
+
+.flight-route{
+
+    font-size:1.8rem;
+
+    text-align:center;
+
+    margin:1.5rem 0;
+
+    font-weight:700;
+
+}
+
+.info-box{
+
+    background:#f7f9fc;
+
+    border-radius:14px;
+
+    padding:1rem;
+
+    text-align:center;
+
+}
+
+.label{
+
+    display:block;
+
+    color:#706e6b;
+
+    margin-bottom:.5rem;
+
+}
+
+.value{
+
+    font-weight:700;
+
+    font-size:1.1rem;
+
+}
+
+.price{
+
+    color:#2e844a;
+
+    font-size:1.5rem;
+
+    font-weight:700;
+
+}
+
+/* Passenger */
+
+.passenger-card{
+
+    background:#f7f9fc;
+
+    border-radius:16px;
+
+    padding:1.2rem;
+
+    transition:.3s;
+
+}
+
+.passenger-card:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 6px 18px rgba(0,0,0,.1);
+
+}
+
+.passenger-name{
+
+    font-size:1.1rem;
+
+    font-weight:700;
+
+    margin-bottom:1rem;
+
+}
+
+.badge-row{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:.6rem;
+
+}
+
+.badge{
+
+    background:#e8f3ff;
+
+    color:#0176d3;
+
+    padding:.35rem .9rem;
+
+    border-radius:20px;
+
+    font-size:.85rem;
+
+    font-weight:600;
+
+}
+
+/* Fare */
+
+.fare-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin:1rem 0;
+
+    font-size:1rem;
+
+}
+
+.fare-total{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    font-size:1.4rem;
+
+    font-weight:700;
+
+    color:#2e844a;
+
+    margin-top:1rem;
+
+}
+
+/* Buttons */
+
+.button-row{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:1rem;
+
+    margin-top:2rem;
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.hero{
+
+    text-align:center;
+
+    justify-content:center;
+
+}
+
+.hero-route{
+
+    margin-top:1rem;
+
+}
+
+.flight-route{
+
+    font-size:1.4rem;
+
+}
+
+.button-row{
+
+    flex-direction:column;
+
+}
+
+}
